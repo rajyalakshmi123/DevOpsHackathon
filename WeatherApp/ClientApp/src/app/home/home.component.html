@@ -1,0 +1,45 @@
+<style>
+  th, td {
+    font-weight: 600
+  }
+</style>
+<h1><p >Check Weather</p></h1>
+
+<form (keydown)="GetWeatherData()">
+  <!--<p>Enter your location:</p>-->
+  <input name="txtLocation" [(ngModel)]="location" />
+
+  <button type="submit" name="fetchWeatherData" (click)="GetWeatherData()">Go</button>
+  <br />
+  <br />
+  <div [hidden]="!edited" class="table-responsive">
+    <h4>
+      <p style="font-weight:900">Weather in {{weatherData?.name}}, {{weatherData?.sys?.country}}</p>
+    </h4>
+    <table class="table table-hover border" style="width:60%">
+      <tr>
+        <td> {{weatherData?.weather[0]?.description}}</td>
+      </tr>
+      <tr>
+        <td>Temperature - {{weatherData?.main?.temp}}°C</td>
+      </tr>
+      <tr>
+        <td>Pressure - {{weatherData?.main?.pressure}} hpa</td>
+      </tr>
+      <tr>
+        <td>Humidity - {{weatherData?.main?.humidity}} %</td>
+      </tr>
+      <tr>
+        <td>Min Temperature - {{weatherData?.main?.temp_min}}°C</td>
+      </tr>
+      <tr>
+        <td>Max Temperature - {{weatherData?.main?.temp_max}}°C</td>
+      </tr>
+      <tr>
+        <td>Wind - {{weatherData?.wind?.speed}} m/s, ({{weatherData?.wind?.deg}})</td>
+      </tr>
+
+    </table>
+  </div>
+
+</form>
