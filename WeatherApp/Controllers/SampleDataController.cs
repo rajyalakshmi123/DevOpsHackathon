@@ -11,7 +11,7 @@ namespace WeatherApp.Controllers
     {
         private static string[] Summaries = new[]
         {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching","Raining"
         };
 
         [HttpGet("[action]")]
@@ -31,7 +31,7 @@ namespace WeatherApp.Controllers
             public string DateFormatted { get; set; }
             public int TemperatureC { get; set; }
             public string Summary { get; set; }
-
+         
             public int TemperatureF
             {
                 get
